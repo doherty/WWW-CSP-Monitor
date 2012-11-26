@@ -11,7 +11,10 @@ use Try::Tiny;
 
 post '/csp' => sub {
     try {
-        my $new_report = schema->resultset('Report')->create_FROM_JSON( param('csp-report') );
+        my $new_report = schema->resultset('Report')->create_FROM_JSON(
+            ip   => request->address,
+            json => param('csp-report'),
+        );
         return { success => 1, report_id => $new_report->id };
     }
     catch {

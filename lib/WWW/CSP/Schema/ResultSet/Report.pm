@@ -10,7 +10,12 @@ use WWW::CSP::Schema::Result::Report ();
 
 sub create_FROM_JSON {
     my $rs = shift;
-    return $rs->create( WWW::CSP::Schema::Result::Report->FROM_JSON(@_) );
+    my %args = @_;
+
+    return $rs->create({
+        %{ WWW::CSP::Schema::Result::Report->FROM_JSON( $args{json}) },
+        report_reporter_ip => $args{ip},
+    });
 }
 
 1;
