@@ -23,3 +23,7 @@ plugins:
             pass: ...
             schema_class: WWW::CSP::Schema
             mysql_enable_utf8: true
+
+plack_middlewares:
+    -
+        - Plack::Middleware::ReverseProxy

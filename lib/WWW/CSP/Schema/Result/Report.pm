@@ -49,6 +49,12 @@ __PACKAGE__->add_columns(
         data_type => 'datetime',
         timezone => 'UTC',
     },
+    report_reporter_ip => {
+        accessor => 'reporter_ip',
+        data_type => 'varchar',
+        size => '15',
+        is_nullable => 1,
+    },
 );
 
 __PACKAGE__->set_primary_key(qw/ report_id /);
