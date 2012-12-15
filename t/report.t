@@ -10,11 +10,11 @@ use Dancer::Test;
 
 schema->deploy;
 
-route_exists [POST => '/csp'], 'a route handler is defined for POST /csp';
+route_exists [POST => '/'], 'a route handler is defined for POST /csp';
 
 my $json = do { local $/; <DATA> };
 my $payload = decode_json($json);
-my $response = dancer_response( POST => '/csp', { params => $payload } );
+my $response = dancer_response( POST => '/', { params => $payload } );
 is $response->{status}, 200, 'POSTed a report';
 is_deeply decode_json($response->{content}), { success => 1, report_id => 1 }, 'POST claims success'
     or diag explain $response;
