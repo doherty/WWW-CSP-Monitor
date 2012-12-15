@@ -14,7 +14,7 @@ subtest 'IP gets saved' => sub {
     plan tests => 2;
 
     my $json = do { local $/; <DATA> };
-    my $response = dancer_response( POST => '/csp', { params => decode_json($json) } );
+    my $response = dancer_response( POST => '/', { params => decode_json($json) } );
     is $response->{status}, 200;
 
     my $db_row = schema->resultset('Report')->find({ report_id => 1 });

@@ -9,7 +9,7 @@ use Dancer ':syntax';
 use Dancer::Plugin::DBIC 'schema';
 use Try::Tiny;
 
-post '/csp' => sub {
+post '/' => sub {
     try {
         my $new_report = schema->resultset('Report')->create_FROM_JSON(
             ip   => request->address,
