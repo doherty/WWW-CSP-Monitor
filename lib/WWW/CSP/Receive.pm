@@ -10,6 +10,7 @@ use Dancer::Plugin::DBIC 'schema';
 use Try::Tiny;
 
 post '/' => sub {
+    send_error({ error => 'invalid payload' }) unless param('csp-report');
     try {
         my $new_report = schema->resultset('Report')->create_FROM_JSON(
             ip   => request->address,
