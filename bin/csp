@@ -1,0 +1,42 @@
+#!/var/www/p.hashbang.ca/perl5/perls/perl-5.16.1/bin/perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+# VERSION
+# PODNAME: csp
+# ABSTRACT: init script for WWW::CSP::Receive
+
+use Daemon::Control;
+
+=head1 SYNOPSIS
+
+    pastebin [start|stop|restart|status]
+
+=for test_synopsis
+1;
+__END__
+
+=cut
+
+$ENV{PLACK_ENV} = 'production';
+$ENV{PLACK_SERVER} = 'Starman';
+
+Daemon::Control->new({
+    name        => 'csp',
+    program     => '/var/www/p.hashbang.ca/perl5/perls/perl-5.16.1/bin/plackup',
+    program_args=> [
+        '-l' => '/var/run/www-data-daemons/csp.sock',
+        '-a' => '/var/www/csp.hashbang.ca/WWW-CSP-Receive/bin/app.pl',
+    ],
+    fork        => 2,
+    user        => 'www-data',
+    group       => 'www-data',
+    pid_file    => '/var/run/www-data-daemons/csp.pid',
+    stdout_file => '/var/log/www-data-daemons/csp.log',
+    stderr_file => '/var/log/www-data-daemons/csp.log',
+
+    lsb_start   => '$nginx',
+    lsb_stop    => '$nginx',
+    lsb_sdesc   => 'Starts WWW::CSP::Receive under plackup+Starman',
+    lsb_desc    => 'Starts WWW::CSP::Receive under plackup+Starman',
+})->run;
