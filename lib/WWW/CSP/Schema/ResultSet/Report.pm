@@ -8,6 +8,17 @@ use warnings;
 use base qw( DBIx::Class::ResultSet );
 use WWW::CSP::Schema::Result::Report ();
 
+=head2 create_FROM_JSON
+
+Constructs a Report from JSON input.
+
+    my $new_report = schema->resultset('Report')->create_FROM_JSON(
+        ip   => request->address,
+        json => param('csp-report'),
+    );
+
+=cut
+
 sub create_FROM_JSON {
     my $rs = shift;
     my %args = @_;

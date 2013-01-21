@@ -59,6 +59,12 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key(qw/ report_id /);
 
+=head2 TO_JSON
+
+A method for serializing Reports into JSON. See L<JSON/convert_blessed>.
+
+=cut
+
 sub TO_JSON {
     my $self = shift;
     return { 'csp-report' => {
@@ -69,6 +75,16 @@ sub TO_JSON {
         'original-policy'       => $self->original_policy,
     }};
 }
+
+=head2 FROM_JSON
+
+A class method which returns a hashref of parameters required to generate a
+Report, given the deserialized JSON document of a report from a client.
+
+You probably want to use L<WWW::CSP::Schema::ResultSet::Report/create_FROM_JSON>
+instead.
+
+=cut
 
 sub FROM_JSON {
     my $class = shift;
