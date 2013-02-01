@@ -30,7 +30,7 @@ and may be cloned from [git://github.com/doherty/WWW-CSP-Monitor.git](git://gith
 # BUGS AND LIMITATIONS
 
 You can make new bug reports, and view existing ones, through the
-web interface at [http://rt.cpan.org](http://rt.cpan.org).
+web interface at [https://github.com/doherty/WWW-CSP-Monitor/issues](https://github.com/doherty/WWW-CSP-Monitor/issues).
 
 # AUTHOR
 

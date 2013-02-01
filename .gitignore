@@ -3,3 +3,4 @@ Build
 MYMETA.*
 _build/
 *.bak
+.build
