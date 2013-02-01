@@ -18,7 +18,7 @@ SUBCLASS
 
 
 my $build = $mb_subclass->new(
-    module_name => 'WWW::CSP::Receive',
+    module_name => 'WWW::CSP::Monitor',
     dist_abstract => 'receive Content Security Policy violation reports',
     dist_author => 'Mike Doherty <doherty@cpan.org>',
 ##{ $plugin->get_prereqs ##},

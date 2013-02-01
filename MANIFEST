@@ -5,7 +5,7 @@ config.yml
 dist.ini
 environments/development.yml
 environments/production.yml
-lib/WWW/CSP/Receive.pm
+lib/WWW/CSP/Monitor.pm
 lib/WWW/CSP/Schema.pm
 lib/WWW/CSP/Schema/Result/Report.pm
 lib/WWW/CSP/Schema/ResultSet/Report.pm

@@ -3,7 +3,7 @@ use strict;
 use warnings;
 # VERSION
 # PODNAME: csp
-# ABSTRACT: init script for WWW::CSP::Receive
+# ABSTRACT: init script for WWW::CSP::Monitor
 
 use Daemon::Control;
 
@@ -25,7 +25,7 @@ Daemon::Control->new({
     program     => '/var/www/p.hashbang.ca/perl5/perls/perl-5.16.1/bin/plackup',
     program_args=> [
         '-l' => '/var/run/www-data-daemons/csp.sock',
-        '-a' => '/var/www/csp.hashbang.ca/WWW-CSP-Receive/bin/app.pl',
+        '-a' => '/var/www/csp.hashbang.ca/WWW-CSP-Monitor/bin/app.pl',
     ],
     fork        => 2,
     user        => 'www-data',
@@ -36,6 +36,6 @@ Daemon::Control->new({
 
     lsb_start   => '$nginx',
     lsb_stop    => '$nginx',
-    lsb_sdesc   => 'Starts WWW::CSP::Receive under plackup+Starman',
-    lsb_desc    => 'Starts WWW::CSP::Receive under plackup+Starman',
+    lsb_sdesc   => 'Starts WWW::CSP::Monitor under plackup+Starman',
+    lsb_desc    => 'Starts WWW::CSP::Monitor under plackup+Starman',
 })->run;

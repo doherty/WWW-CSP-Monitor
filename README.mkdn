@@ -1,21 +1,31 @@
 # NAME
 
-WWW::CSP::Receive - receive Content Security Policy violation reports
+WWW::CSP::Monitor - receive Content Security Policy violation reports
 
 # VERSION
 
 version 0.001
 
+# DESCRIPTION
+
+__WWW::CSP::Monitor__ is a simple [Dancer](http://search.cpan.org/perldoc?Dancer) web application to help you monitor
+your Content Security Policy by accepting reports from web browsers about
+violations of the policy.
+
+# SEE ALSO
+
+[http://hashbang.ca/?p=898](http://hashbang.ca/?p=898)
+
 # AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit [http://www.perl.com/CPAN/](http://www.perl.com/CPAN/) to find a CPAN
-site near you, or see [https://metacpan.org/module/WWW::CSP::Receive/](https://metacpan.org/module/WWW::CSP::Receive/).
+site near you, or see [https://metacpan.org/module/WWW::CSP::Monitor/](https://metacpan.org/module/WWW::CSP::Monitor/).
 
 # SOURCE
 
-The development version is on github at [http://github.com/doherty/WWW-CSP-Receive](http://github.com/doherty/WWW-CSP-Receive)
-and may be cloned from [git://github.com/doherty/WWW-CSP-Receive.git](git://github.com/doherty/WWW-CSP-Receive.git)
+The development version is on github at [http://github.com/doherty/WWW-CSP-Monitor](http://github.com/doherty/WWW-CSP-Monitor)
+and may be cloned from [git://github.com/doherty/WWW-CSP-Monitor.git](git://github.com/doherty/WWW-CSP-Monitor.git)
 
 # BUGS AND LIMITATIONS
 

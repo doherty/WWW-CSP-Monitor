@@ -2,10 +2,10 @@
 use strict;
 use warnings;
 use Dancer qw(dance);
-use WWW::CSP::Receive;
+use WWW::CSP::Monitor;
 
 # PODNAME: app.pl
-# ABSTRACT: Run WWW::CSP::Receive
+# ABSTRACT: Run WWW::CSP::Monitor
 # VERSION
 
 dance;
