@@ -3,7 +3,7 @@
 # all the settings in this file will be loaded at Dancer's startup.
 
 # Your application's name
-appname: "WWW::CSP::Receive"
+appname: "WWW::CSP::Monitor"
 
 # when the charset is set to UTF-8 Dancer will handle for you
 # all the magic of encoding and decoding. You should not care

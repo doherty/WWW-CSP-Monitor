@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 # the order is important
-use WWW::CSP::Receive;
+use WWW::CSP::Monitor;
 use Dancer::Plugin::DBIC;
 use JSON qw( decode_json );
 use Dancer::Test;
