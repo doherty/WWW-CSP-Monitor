@@ -52,7 +52,7 @@ __PACKAGE__->add_columns(
     report_reporter_ip => {
         accessor => 'reporter_ip',
         data_type => 'varchar',
-        size => '15',
+        size => '39',
         is_nullable => 1,
     },
 );
